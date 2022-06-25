@@ -65,14 +65,17 @@ const runTimer = ()=>{
 
         <form>
         Minutes:
-          <input type="number" onChange={(e) => setMinutes(e.target.value)} min="0" max="59"></input>
+  
+
+
+          <input type="number" onChange={(e) => setMinutes(e.target.value)} min="0" max="59" placeholder="0"></input>
         Seconds: 
-        <input type="number" onChange={(e) => setSeconds(e.target.value)} min="0" max="59"></input>
+        <input type="number" onChange={(e) => setSeconds(e.target.value)} min="0" max="59" placeholder="0"></input>
         
         </form>
 
         <h3>{minutes === undefined? "00": (minutes === undefined || minutes.toString().length === 1? "0" + minutes : minutes)}:{seconds === undefined || seconds.toString().length === 1? "0" + seconds : seconds}</h3>
-        <button onClick={()=>{startTimer()}}>START</button>
+        <button onClick={()=>{startTimer()}}>Start</button>
       </header>
     </div>
   );
