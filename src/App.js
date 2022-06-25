@@ -65,9 +65,9 @@ const runTimer = ()=>{
 
         <form>
         Minutes:
-          <input type="number" onChange={(e) => setMinutes(e.target.value)}></input>
+          <input type="number" onChange={(e) => setMinutes(e.target.value)} min="0" max="59"></input>
         Seconds: 
-        <input type="number" onChange={(e) => setSeconds(e.target.value)}></input>
+        <input type="number" onChange={(e) => setSeconds(e.target.value)} min="0" max="59"></input>
         
         </form>
 
