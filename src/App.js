@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 function App() {
 
   let [minutes, setMinutes] = useState(0);
-  let [seconds, setSeconds] = useState(3)
+  let [seconds, setSeconds] = useState(0)
   var interval = null;
   let minuteStop = false;
   let secondStop = false;
@@ -15,6 +15,7 @@ function App() {
 
 
 const runTimer = ()=>{
+
   console.log(interval)
   if(secondStop === true && minuteStop === true){
     console.log("000")
@@ -50,17 +51,25 @@ const runTimer = ()=>{
       }
     })
   }
-  }
+}
 
-  let startTimer =()=>{
+  let startTimer = ()=>{
+  
     setInterval(runTimer, 1000);
   } 
-
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Timer</h1>
+
+        <form>
+        Minutes:
+          <input type="number" onChange={(e) => setMinutes(e.target.value)}></input>
+        Seconds: 
+        <input type="number" onChange={(e) => setSeconds(e.target.value)}></input>
+        
+        </form>
 
         <h3>{minutes === undefined? "00": (minutes === undefined || minutes.toString().length === 1? "0" + minutes : minutes)}:{seconds === undefined || seconds.toString().length === 1? "0" + seconds : seconds}</h3>
         <button onClick={()=>{startTimer()}}>START</button>
